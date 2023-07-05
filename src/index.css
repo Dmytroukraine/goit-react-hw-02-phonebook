@@ -1,4 +1,4 @@
-/* @import-normalize; bring in normalize.css styles */
+/* @import-normalize; */
 
 * {
   box-sizing: border-box;
@@ -12,6 +12,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: cadetblue; */
+}
+
+div{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
 }
 
 code {

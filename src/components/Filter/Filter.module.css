@@ -28,17 +28,23 @@
 
 
   
-.search {
-    display: flex;
-    flex-direction: column;
-    
-    margin-left: 630px;
+  .search {
+    display: flex; 
+    justify-content: center; /* Додаємо вирівнювання по горизонталі в центр */
+    align-items: center; /* Додаємо вирівнювання по вертикалі в центр */
     font-size: 20px;
     border: solid 0.2em #000000;
     display: inline-block;
     position: relative;
     border-radius: 2.5em;
+    margin-top: 10px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
   }
+  .searchContainer {display: flex !important;}
+  .App_contact_list_container__EVyvM {display: flex !important;}
+
   .search input[type=text] {
     font-family: inherit;
     font-weight: bold;
