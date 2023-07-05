@@ -25,8 +25,8 @@
     cursor: pointer;
   }
   
-  .delete_btn:hover {
-    background: #e2e2e2;
+  .delete_btn:hover, .delete_btn:focus {
+    background: #8052ff;
   }
   
 
