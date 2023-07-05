@@ -8,7 +8,7 @@
   }
   
   .itemName {
-    width: 60%;
+    width: 65%;
     font-weight: 500;
   }
   
@@ -29,3 +29,27 @@
     background: #e2e2e2;
   }
   
+
+
+  .item {
+  
+    text-transform: uppercase;
+    color: #333;
+  } 
+  .item {
+    
+    animation: slideLeft 1.5s forwards;
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    } 
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
