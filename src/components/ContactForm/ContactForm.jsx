@@ -1,5 +1,5 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import style from './ContactForm.module.css';
 
@@ -9,18 +9,17 @@ class ContactForm extends Component {
   handleChange = event => {
     const { name, value } = event.currentTarget;
 
+    if (name === 'number' && !/^[0-9\s-+()]*$/.test(value)) {
+      alert('Введіть лише цифри, символи та пробіл!');
+      return;
+    }
+
     this.setState({ [name]: value });
   };
 
   handleSubmit = event => {
     const { name, number } = this.state;
     event.preventDefault();
-
-    // for (const contact of this.props.contacts) {
-    //   if (name.toLowerCase() === contact.name.toLowerCase()) {
-    //     return alert(`${name} is already in contacts`);
-    //   }
-    // }
 
     const matchName = this.props.contactsName.some(
       contactName => name.toLowerCase() === contactName.toLowerCase()
@@ -69,8 +68,8 @@ class ContactForm extends Component {
             type="tel"
             name="number"
             className={style.input}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            pattern="[0-9\s-+()]*"
+            title="Phone number must contain only digits, symbols (+, -, (, ), space)"
             required
             onChange={this.handleChange}
             value={number}
